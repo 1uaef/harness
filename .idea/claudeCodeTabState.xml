@@ -8,8 +8,6 @@
             <TabSessionState>
               <option name="projectPath" value="D:\project\harness_learn" />
               <option name="provider" value="claude" />
-              <option name="sessionId" value="c77effd3-1713-4152-a72c-53e35b4f02b2" />
-              <option name="cwd" value="D:\project\harness_learn" />
               <option name="model" value="claude-opus-5-5[1m]" />
               <option name="permissionMode" value="acceptEdits" />
             </TabSessionState>
