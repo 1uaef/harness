@@ -15,7 +15,7 @@
                     防止事件堆积导致内存溢出
 
 典型用法:
-    from runtime.streaming import (
+    from runtime.stream_executor import (
         QueryEngine, StreamingToolExecutor, MockModelStream, MessageWindow,
     )
 
