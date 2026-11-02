@@ -16,6 +16,7 @@ Claude Code 采用的状态管理方式(文档 4.2.2):
 
 import threading
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Callable, Dict, List, Union
 
@@ -48,6 +49,7 @@ class AppState:
     messages: List[Message] = field(default_factory=list)  # 完整消息历史(只增不减,裁剪交给 MessageWindow)
     current_turn: int = 0  # 当前对话轮次
     token_count: int = 0  # 历史消息的累计估算 Token 数
+    started_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))  # 会话开始时间(约束验证/漂移检测用)
     _subscribers: List[StateChangeCallback] = field(default_factory=list)  # 订阅者列表
     # 保护订阅者列表的锁:发布-订阅模式的并发安全靠它兜底(对比表中的"同步机制")
     _lock: threading.RLock = field(default_factory=threading.RLock, repr=False, compare=False)
