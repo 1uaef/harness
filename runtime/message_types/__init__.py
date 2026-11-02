@@ -35,7 +35,7 @@ from .blocks import (
 )
 from .message import Message, MessageRole
 from .state import AppState, StateChangeCallback, StateChangeEvent
-from .window import MessageWindow
+from .window import MessageWindow, repair_tool_pairs
 
 __all__ = [
     # 内容块
@@ -56,4 +56,5 @@ __all__ = [
     "StateChangeCallback",
     # 窗口管理
     "MessageWindow",
+    "repair_tool_pairs",
 ]
